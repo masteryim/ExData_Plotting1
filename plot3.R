@@ -2,7 +2,7 @@
 # get data from data file
 # data of file seperated by ;
 fileName = "household_power_consumption.txt"
-pcData <- read.table(fileName, header = TRUE, colClasses = "character", sep = ";")
+pcData <- read.table(fileName, header = TRUE, na.strings = "?", colClasses = "character", sep = ";")
 
 
 # get part of data for two days 
