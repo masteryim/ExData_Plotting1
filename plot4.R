@@ -2,7 +2,7 @@
 # get data from data file
 # data of file seperated by ;
 fileName = "household_power_consumption.txt"
-pcData <- read.table(fileName, header = TRUE, colClasses = "character", sep = ";")
+pcData <- read.table(fileName, header = TRUE, na.strings = "?", colClasses = "character", sep = ";")
 
 # --------------------------------
 # get part of data for two days 
@@ -53,7 +53,8 @@ lines(datetime, subMetering3, type = "l", col = "blue")
 
 
 ## 3) display the legend options
-legend("topright", lty = 1, lwd = 1, bty="n", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black", "red", "blue"))
+legend("topright", lty = 1, lwd = 1, bty="n", 
+       legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black", "red", "blue"))
 
 
 # --------------------------------
